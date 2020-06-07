@@ -1,0 +1,20 @@
+{
+  "name": "kill-and-win-workspaces",
+  "private": true,
+  "engines": {
+    "yarn": ">=2.0.0"
+  },
+  "scripts": {
+    "start": "nps"
+  },
+  "workspaces": [
+    "workspaces/*"
+  ],
+  "dependencies": {
+    "@yarnpkg/pnpify": "^2.0.0-rc.22"
+  },
+  "devDependencies": {
+    "nps": "^5.9.12",
+    "nps-utils": "^1.7.0"
+  }
+}
