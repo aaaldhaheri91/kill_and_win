@@ -1,16 +1,23 @@
 const { series } = require("nps-utils");
 
 const build = {
-    default: series.nps(`tsc`)
+    default: series.nps(`tsc`),
+    prod: series.nps('webpack.prod'),
+    dev: 'node scripts/start.js'
 };
 
 const tsc = {
-    default: `tsc --noEmit false`
+    default: `tsc`
 };
 
 const run = {
-    default: `tsc --noEmit false && NODE_ENV=development ts-node src/server.ts`
+    default: `NODE_ENV=development ts-node src/server.ts`
 };
+
+const webpack = {
+    prod: 'node scripts/build.js',
+    dev: 'node scripts/start.js'
+}
 
 const startDev = {
     default: `nodemon`
@@ -29,6 +36,7 @@ module.exports = () => ({
         tsc,
         run,
         startDev,
-        reactscripts
+        reactscripts,
+        webpack
     }
 });
